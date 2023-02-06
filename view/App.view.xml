@@ -9,4 +9,10 @@
    <Button
       text="Greet"
       press=".onShowGreeting"/>
+   <Input
+      value="{/recipient/name}"
+      description="Hello {/recipient/name}"
+      valueLiveUpdate="true"
+      width="100%"
+      />
 </mvc:View>
