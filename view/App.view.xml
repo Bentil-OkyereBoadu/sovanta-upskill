@@ -6,9 +6,6 @@
    <Button
       text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
-   <Button
-      text="Greet"
-      press=".onShowGreeting"/>
    <Input
       value="{/recipient/name}"
       description="Hello {/recipient/name}"
