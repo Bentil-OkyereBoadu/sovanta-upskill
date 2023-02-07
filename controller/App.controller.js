@@ -20,12 +20,12 @@ sap.ui.define([
          const i18nModel = new ResourceModel({
             bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
          });
-         this.getView().setModel(i18nModel, "translate");
+         this.getView().setModel(i18nModel, "i18n");
         },
 
         onShowHello : function () {
             // read msg from i18n model
-         const bundle = this.getView().getModel("translate").getResourceBundle();
+         const bundle = this.getView().getModel("i18n").getResourceBundle();
          const recipient = this.getView().getModel().getProperty("/recipient/name");
          const msg = bundle.getText("helloMsg", [recipient]);
          // show message

@@ -4,7 +4,7 @@
    xmlns:mvc="sap.ui.core.mvc">
    <Text text="SAP UI Trials"/>
    <Button
-      text="Say Hello"
+      text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
    <Button
       text="Greet"
