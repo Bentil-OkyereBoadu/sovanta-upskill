@@ -13,6 +13,6 @@
       value="{/recipient/name}"
       description="Hello {/recipient/name}"
       valueLiveUpdate="true"
-      width="100%"
+      width="60%"
       />
 </mvc:View>
