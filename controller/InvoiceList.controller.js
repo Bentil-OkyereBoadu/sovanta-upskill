@@ -1,0 +1,20 @@
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel"
+], function(
+	Controller, JSONModel
+) {
+	"use strict";
+
+	return Controller.extend("sap.ui.demo.walkthrough.controller.InvoiceList", {
+        onInit: function() {
+            
+            const oCurrencyModel = new JSONModel({
+                currency: "EUR"
+            })
+
+            this.getView().setModel(oCurrencyModel, "money")
+        
+        }
+	});
+});
