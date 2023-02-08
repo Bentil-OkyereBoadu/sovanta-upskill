@@ -9,6 +9,7 @@
 		class="sapUiResponsiveMargin"
 		width="auto"
 		items="{invoice>/Invoices}"
+        id="invoiceList"
 	>
 		<items>
 			<ObjectListItem title="{invoice>ProductName} x {invoice>Quantity}"
@@ -21,7 +22,16 @@
                 }"
                 numberUnit="{money>/currency}"
                 numberState="{=${invoice>ExtendedPrice} > 50? 'Error' : 'Success'}"
-            />
+            >
+            <firstStatus>
+                <ObjectStatus
+                    text="{
+                        path: 'invoice>Status',
+                        formatter: '.formatter.statusText'
+                    }"
+                />
+            </firstStatus>
+            </ObjectListItem>
 		</items>
 	</List>
 </mvc:View>
