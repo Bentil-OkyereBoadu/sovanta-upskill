@@ -8,12 +8,12 @@
 		class="sapUiResponsiveMargin"
 		width="auto"
 		items="{
-            path: 'invoice>/Invoices',
-            sorter: {
-                path: 'ShipperName',
-                group: true
-                }
-            }"
+			path: 'invoice>/Invoices',
+			sorter: {
+				path: 'ShipperName',
+				group: true
+			}
+		}"
 		id="invoiceList"
 	>
 		<headerToolbar>
@@ -42,6 +42,8 @@
 				}"
 				numberUnit="{money>/currency}"
 				numberState="{=${invoice>ExtendedPrice} > 50? 'Error' : 'Success'}"
+				type="Navigation"
+				press="onPress"
 			>
 				<firstStatus>
 					<ObjectStatus text="{
