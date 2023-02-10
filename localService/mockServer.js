@@ -7,11 +7,11 @@ sap.ui.define([
 	return {
 		init: function () {
 			// create
-			var oMockServer = new MockServer({
+			const oMockServer = new MockServer({
 				rootUri: "https://services.odata.org/V2/Northwind/Northwind.svc/"
 			});
 
-			var oUriParameters = new UriParameters(window.location.href);
+			const oUriParameters = new UriParameters(window.location.href);
 
 			// configure mock server with a delay
 			MockServer.config({
@@ -20,7 +20,7 @@ sap.ui.define([
 			});
 
 			// simulate
-			var sPath = sap.ui.require.toUrl("sap/ui/demo/walkthrough/localService");
+			const sPath = sap.ui.require.toUrl("sap/ui/demo/walkthrough/localService");
 			oMockServer.simulate(sPath + "/metadata.xml", sPath + "/mockdata");
 
 			// start
