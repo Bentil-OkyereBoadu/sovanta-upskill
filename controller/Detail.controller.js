@@ -1,9 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-    "sap/ui/core/routing/History"
+    "sap/ui/core/routing/History",
+	"sap/m/MessageToast"
 ], function(
 	Controller,
-	History
+	History,
+	MessageToast
 ) {
 	"use strict";
 
@@ -13,6 +15,7 @@ sap.ui.define([
 			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 		},
 		_onObjectMatched: function (oEvent) {
+			this.byId("rating").reset();
 			this.getView().bindElement({
 				path: window.decodeURIComponent(oEvent.getParameter("arguments").invoicePath),
 				model: "invoice"
@@ -26,8 +29,15 @@ sap.ui.define([
 				window.history.go(-1);
 			} else {
 				const oRouter = this.getOwnerComponent().getRouter();
-				oRouter.navTo("overview", {}, true);
+				oRouter.navTo("overview", {});
 			}
-        }
+        },
+
+		onRatingChange: function (oEvent) {
+			const fValue = oEvent.getParameter("value");
+			const oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+
+			MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
+		}
 	});
 });
